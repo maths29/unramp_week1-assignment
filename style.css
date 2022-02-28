@@ -21,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   
-  
+
 }
 form {
   background: #fa5959;
@@ -39,7 +39,7 @@ h1 {
   
   display: table;
 }
-.form_group.label,.form_group.input{
+.form_group label,.form_group input{
   display:table-cell;
   width:50%;
   vertical-align: top;

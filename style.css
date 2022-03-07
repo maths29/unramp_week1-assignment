@@ -23,6 +23,7 @@ body {
   
 
 }
+
 form {
   background: #fa5959;
   width: 50%;
@@ -68,10 +69,12 @@ h1 {
 input {
   margin-bottom: 10px;
 }
-.meet{
+.error{
   width: 350px;
   height: 30px;
   text-align: center;
+  background: white;
+  color:red;
 }
 
 .but {

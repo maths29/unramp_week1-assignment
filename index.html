@@ -12,62 +12,99 @@
     </head>
     <body>
         <div id="container">
-          
-            <form>
-
+            <form action="" id="form">
                 <div class="form_group">
-                    <label for="name">Your Name</label>
+                    <label class="label" for="name">Your Name</label>
                     <input
                         
                         type="text"
                         name="name"
-                        id="name"
+                        id="your_name"
                         placeholder=" "
                     >
                 </div>
                 <div class="form_group">
-                    <label for="email">your email</label>
+                    <label class="label" for="email">your email</label>
                     <input
                         
                         type="email"
                         name="email"
-                        id="email"
+                        id="your_email"
                         placeholder=" "
                     >
                 </div>
                 <div class="form_group">
-                    <label for="Activation Token">Activation Token </label>
+                    <label class="label"  for="Activation Token">Activation Token </label>
                     <input
                         
                         type="Token"
                         name="Token"
-                        id="Token"
+                        id="token"
                         placeholder=" "
                     >
                 </div>
                 <div class="but">
-                    <label for="do you agree to the privacy policy">
+                    <label class="label" id="the_privacy_policy" for="do you agree to the privacy policy">
                         do you agree to the
-                        <a href="https://replit.com/@johnnonso1/newbie#index.js"> privacy policy</a>
+                        <a> privacy policy</a>
                     </label>
-                    <input type="checkbox" name="privacy policy" id="privacy policy">
+                    
+                    <input class="meet"  type="checkbox" 
+                    name="privacy policy" 
+                    id="privacy policy">
                 </div>
-                <div>
-                    <input class="meet" type="text" name="" placeholder="Email must be filled out !!!">
+                <div class="error">
+                   
                 </div>
                 <div class="but">
-                    <button type="button">submit</button>
+                    
+                    <button type="submit">submit</button>
                 </div>
-                <div></div>
-                <!-- <form
-                    name="myform"
-                    action="/action-page.php"
-                    onsubmit="return validateform()"
-                    method="GET"
-                >
-               </form> -->
+                
+          
             </form>
-            <img id="home" src="./starter-code/images/img.png">
         </div>
-    </body>
+            
+            <img id="home" src="./starter-code/images/img.png">
+ </body>
+<script>  
+    let yourname = document.getElementById("your_name");
+    let youremail = document.getElementById("your_email");
+    let action = document.getElementById("token");
+    let err_msg  = document.getElementsByClassName("error")[0];
+    let form = document.getElementById("form");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("hey",yourname,err_msg)
+        let err = [];
+        let yournameval=yourname.value;
+        if (yournameval ===""){
+            console.log('checking name');
+            err_msg.textContent= "please fill in your name";
+            return;
+        }
+        let youremailval=youremail.value;
+        if(youremailval ===""){
+            console.log("checking email")
+            console.log(youremail,err_msg)
+            err_msg.textContent= "please enter your email";
+            return;
+        }
+        let actionval = action.value;
+        console.log(actionval, action);
+        if(actionval ===""){
+            console.log('checking action');
+            err_msg.textContent= "please provide your token name";
+            return;
+        }
+        if(err.length>0){
+            err_msg.innerText = err.join(",")
+            console.log(err.length+ "erooeeee");
+            
+        }
+        if(err.length>0){
+        err_msg=err[0];}
+    })
+</script>
 </html>
